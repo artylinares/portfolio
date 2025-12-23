@@ -1,1 +1,0 @@
-import{at as o}from"./index-BJOYTI8a.js";function p(i){i?.writtenProperties&&i.writtenProperties.forEach(({target:r,propName:e,newOrigin:t})=>{o(r)&&t&&r.originOf(e)!==t&&r.updateOrigin(e,t)})}export{p as i};

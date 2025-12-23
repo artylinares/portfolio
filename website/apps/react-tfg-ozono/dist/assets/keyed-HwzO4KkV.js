@@ -1,1 +1,0 @@
-import{ai as s,aj as i,E as o}from"./index-BJOYTI8a.js";import{m as a}from"./ref-YaLdi40i.js";const u=s(class extends i{constructor(){super(...arguments),this.key=o}render(r,e){return this.key=r,e}update(r,[e,t]){return e!==this.key&&(a(r),this.key=e),t}});export{u as i};
