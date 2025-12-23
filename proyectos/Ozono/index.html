@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto TFG · Ozono en la Comunidad de Madrid</title>
+  <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
+  <!-- CSS global del portfolio -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Estilos específicos de la página del proyecto -->
+  <style>
+    .encabezado-proyecto {
+      padding-bottom: 32px;
+    }
+
+    .cabecera-proyecto {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .titulo-pagina-proyecto {
+      font-size: clamp(1.6rem, 2.3vw, 2rem);
+      margin-bottom: 6px;
+    }
+
+    .subtitulo-pagina-proyecto {
+      font-size: 0.96rem;
+      color: var(--color-texto-mas-suave);
+      max-width: 38rem;
+    }
+
+    .enlace-volver-proyectos {
+      font-size: 0.86rem;
+      color: var(--color-texto-mas-suave);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      white-space: nowrap;
+      align-self: flex-start;
+      text-decoration: none;
+      transition: 0.16s ease-out;
+    }
+
+    .enlace-volver-proyectos:hover {
+      border-color: var(--color-acento);
+      color: var(--color-texto);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contenedor-proyecto-detalle .seccion {
+      margin-top: 32px;
+    }
+
+    .imagen-proyecto {
+      width: 100%;
+      border-radius: 18px;
+      margin: 16px 0 4px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .seccion-contexto .lista-detalle,
+    .seccion-resultados .lista-detalle,
+    .seccion-conclusiones .lista-detalle {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    .lista-detalle li {
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      color: var(--color-texto-suave);
+    }
+
+    .seccion-visor iframe {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+    }
+
+    .nota-visor {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--color-texto-mas-suave);
+    }
+
+    .bloque-volver-proyectos {
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .boton-volver-proyecto {
+      font-size: 0.88rem;
+      padding-inline: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .cabecera-proyecto {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .enlace-volver-proyectos {
+        align-self: stretch;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ENCABEZADO DEL PROYECTO -->
+  <header class="encabezado encabezado-proyecto">
+    <div class="contenedor encabezado-contenido">
+
+      <nav class="menu-principal">
+        <a href="../../index.html#sobre-mi" class="enlace-menu">Sobre mí</a>
+        <a href="../../index.html#proyectos" class="enlace-menu enlace-activo">Proyectos</a>
+        <a href="../../index.html#contacto" class="enlace-menu">Contacto</a>
+      </nav>
+
+      <div class="cabecera-proyecto">
+        <div>
+          <p class="etiqueta-rol">Trabajo de Fin de Grado de Ciencias Ambientales · Calidad del aire</p>
+          <h1 class="titulo-pagina-proyecto">
+            La evolución del ozono en los últimos años y su relación con el aumento de las temperaturas en la Comunidad de Madrid.
+          </h1>
+          <p class="subtitulo-pagina-proyecto">
+            Análisis espacial · Interpolación · Relación con temperatura · Visor web GIS en
+            ArcGIS Maps SDK for JavaScript.
+          </p>
+        </div>
+
+        <a href="../../index.html#proyectos" class="enlace-volver-proyectos">
+          ← Volver al portfolio
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL DEL PROYECTO -->
+  <main class="contenedor-principal contenedor-proyecto-detalle">
+
+    <!-- CONTEXTO -->
+    <section class="seccion seccion-contexto" id="contexto">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Contexto</h2>
+        <p class="subtitulo-seccion">
+          Trabajo Fin de Grado centrado en el comportamiento espacial del ozono troposférico en los meses de verano en la
+          Comunidad de Madrid.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+
+        <p>
+          En esta página se sintetiza mi Trabajo Fin de Grado, centrado en el análisis del ozono troposférico
+          durante los meses de verano en la Comunidad de Madrid. El objetivo principal es estudiar la distribución
+          espacial de las superaciones del umbral de 120&nbsp;µg/m³, definido en la normativa de calidad del aire,
+          y explorar su relación con las temperaturas máximas estivales.
+        </p>
+
+        <p>
+          Para ello se utilizaron datos de estaciones de calidad del aire de la Comunidad de Madrid, así como
+          datos de temperatura de la AEMET y límites administrativos. A partir de estos datos se generaron distintas
+          superficies interpoladas (kriging) que permiten visualizar los patrones espaciales del contaminante.
+        </p>
+
+        <ul class="lista-detalle">
+          <li>Ámbito de estudio: Comunidad de Madrid.</li>
+          <li>Periodo de análisis: meses de verano desde 2020 hasta 2024.</li>
+          <li>Variables principales: superaciones del umbral de ozono y temperaturas máximas.</li>
+          <li>Principales herramientas utilizadas: ArcGIS Pro, SPSS, Python y desarrollo web GIS con la SDK de ArcGIS.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VISOR -->
+    <section class="seccion seccion-visor" id="visor">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Visor web del proyecto</h2>
+        <p class="subtitulo-seccion">
+          Aplicación interactiva para explorar las interpolaciones de ozono y comparar entre años.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+        <iframe 
+          src="../../apps/react-tfg-ozono/dist/index.html"
+          height="600"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+
+        <p class="nota-visor">
+          El visor permite explorar de forma interactiva los resultados de las interpolaciones de ozono promediados para cada municipio, comparar entre años y
+          superponer la información espacial sobre el territorio de la Comunidad de Madrid.
+        </p>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="seccion seccion-resultados" id="resultados">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Resultados principales</h2>
+        <p class="subtitulo-seccion">
+          Síntesis de los patrones espaciales detectados y de la calidad de las interpolaciones.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+        <p>
+          La variable de ozono representada ha sido el número de días que se ha superado la máxima diaria de las medias 
+          móviles octohorarias (120 μg/m3), promediado en un periodo de tres años el cual es el valor definido por la 
+          legislación estatal, la cual permite un máximo de 25 superaciones al año.
+        </p>
+        <p>
+          Los resultados de las interpolaciones demuestran un inclumplimiento constante de la legislación en varias zonas
+          del territorio madrileño, con una distribución espacial cambiante del contaminante pero siguiendo cierto patrón
+          a lo largo de los años. Este patrón consiste en que los mayores valores se dan en las zonas más rurales de la 
+          Comunidad de Madrid, como son las zonas norte y noreste. En caunto a la evolución temporal se puede apreciar un 
+          ligero aumento general.
+        </p>
+        <p>
+          En cuanto a las altas temperaturas y su relación con los valores de ozono, se debe aclarar que la variable usada
+          para este estudio ha sido el promedio de las temperaturas máximas diarias para cada mes (Tm_max) en grados 
+          centígrados (ºC), teniendo en cuenta únicamente los meses de verano. Dicho esto, existe una correlación 
+          positiva significativa entre ambas variables cuando se promedian los datos de toda la red de calidad del aire, 
+          lo que demuestra que a mayor temperatura mayores niveles de ozono. Mediante el siguiente gráfico se puede observar
+          esta tendencia con facilidad:
+        </p>
+        <img 
+          src="grafico_correlacion_temp.png"
+          alt="Gráfico de correlación entre O3 y temperaturas"
+          class="imagen-proyecto"
+          style="margin-top: 18px;"
+        >
+        <p>
+          A modo de síntesis, algunos de los resultados más relevantes son:
+        </p>
+
+        <ul class="lista-detalle">
+          <li>
+            Identificación de zonas con mayor carga de superaciones del umbral, que se mantienen de forma relativamente
+            constante entre los años analizados.
+          </li>
+          <li>
+            Diferencias espaciales claras entre áreas urbanas, periurbanas y rurales, tanto en intensidad como en extensión
+            de los valores elevados de ozono.
+          </li>
+          <li>
+            Una relación apreciable entre las altas temperaturas y la contaminación por ozono troposférico.
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONCLUSIONES -->
+    <section class="seccion seccion-conclusiones" id="conclusiones">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Conclusiones</h2>
+        <p class="subtitulo-seccion">
+          Integración de análisis espacial, datos ambientales y comunicación a través de un visor web GIS.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+        <p>
+          El trabajo ha permitido caracterizar de forma espacial el comportamiento del ozono troposférico en la Comunidad de
+          Madrid durante el verano, identificando tanto patrones persistentes como diferencias entre años. El uso de técnicas
+          de interpolación ha permitido representar de forma precisa la distribución del contaminante a partir de los 
+          datos puntuales de las estaciones, permitiendo sacar las siguientes conclusiones:
+        </p>
+
+        <ul class="lista-detalle">
+          <li>
+            El ozono presenta una marcada variabilidad espacial, con zonas recurrentes de mayores valores que se asocian a
+            condiciones favorables para su formación y acumulación.
+          </li>
+          <li>
+            La comparación entre años muestra que, aunque la magnitud puede variar, las áreas más afectadas tienden a
+            repetirse, lo que indica patrones espaciales relativamente estables.
+          </li>
+          <li>
+            La relación entre temperatura y superaciones del umbral refuerza el papel de las condiciones meteorológicas en
+            la dinámica del ozono estival.
+          </li>
+          <li>
+            El visor web GIS desarrollado facilita la comunicación de los resultados, permitiendo explorar el territorio y
+            las superficies interpoladas de forma interactiva, más allá del formato clásico de mapas estáticos.
+          </li>
+        </ul>
+
+        <p>
+          A nivel profesional, con este proyecto he querido mostrar mi capacidad para integrar análisis espacial, tratar datos ambientales
+          y desarrollar herramientas web GIS, todo ello aplicado a un problema actual de calidad del aire.
+        </p>
+      </div>
+    </section>
+
+    <!-- DESCARGA DEL TFG -->
+    <div class="bloque-descarga-tfg" style="margin-top: 26px;">
+      <a 
+        href="TFG_Ciencias_Ambientales.pdf" 
+        download 
+        class="boton boton-principal"
+        style="padding-inline: 20px; font-size: 0.95rem;"
+      >
+        Descargar TFG completo (PDF)
+      </a>
+    </div>
+
+    <!-- BOTÓN VOLVER -->
+    <div class="bloque-volver-proyectos">
+      <a href="../../index.html#proyectos" class="boton boton-secundario boton-volver-proyecto">
+        ← Volver a la sección de proyectos
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>

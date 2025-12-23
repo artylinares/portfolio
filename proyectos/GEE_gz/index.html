@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evolución del NDVI estival · Google Earth Engine</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
+
+  <!-- CSS global del portfolio -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Estilos específicos de la página del proyecto -->
+  <style>
+    .encabezado-proyecto {
+      padding-bottom: 32px;
+    }
+
+    .cabecera-proyecto {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .titulo-pagina-proyecto {
+      font-size: clamp(1.6rem, 2.3vw, 2rem);
+      margin-bottom: 6px;
+    }
+
+    .subtitulo-pagina-proyecto {
+      font-size: 0.96rem;
+      color: var(--color-texto-mas-suave);
+      max-width: 38rem;
+    }
+
+    .enlace-volver-proyectos {
+      font-size: 0.86rem;
+      color: var(--color-texto-mas-suave);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 12px;
+      white-space: nowrap;
+      align-self: flex-start;
+      text-decoration: none;
+      transition: 0.16s ease-out;
+    }
+
+    .enlace-volver-proyectos:hover {
+      border-color: var(--color-acento);
+      color: var(--color-texto);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contenedor-proyecto-detalle .seccion {
+      margin-top: 32px;
+    }
+
+    .imagen-proyecto {
+      width: 100%;
+      border-radius: 18px;
+      margin: 16px 0 4px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .lista-detalle {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    .lista-detalle li {
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      color: var(--color-texto-suave);
+    }
+
+    .seccion-visor iframe {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+    }
+
+    .nota-visor {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--color-texto-mas-suave);
+    }
+
+    .bloque-volver-proyectos {
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .boton-volver-proyecto {
+      font-size: 0.88rem;
+      padding-inline: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .cabecera-proyecto {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .enlace-volver-proyectos {
+        align-self: stretch;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ENCABEZADO DEL PROYECTO -->
+  <header class="encabezado encabezado-proyecto">
+    <div class="contenedor encabezado-contenido">
+
+      <nav class="menu-principal">
+        <a href="../../index.html#sobre-mi" class="enlace-menu">Sobre mí</a>
+        <a href="../../index.html#proyectos" class="enlace-menu enlace-activo">Proyectos</a>
+        <a href="../../index.html#contacto" class="enlace-menu">Contacto</a>
+      </nav>
+
+      <div class="cabecera-proyecto">
+        <div>
+          <p class="etiqueta-rol">Google Earth Engine · Teledetección</p>
+          <h1 class="titulo-pagina-proyecto">
+            Evolución del NDVI estival en la Comunidad de Madrid
+          </h1>
+          <p class="subtitulo-pagina-proyecto">
+            Análisis de la vegetación en verano a partir de imágenes Sentinel-2, utilizando Google Earth Engine para
+            generar mapas temporales de NDVI y visualizarlos en un visor interactivo.
+          </p>
+        </div>
+
+        <a href="../../index.html#proyectos" class="enlace-volver-proyectos">
+          ← Volver al portfolio
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL DEL PROYECTO -->
+  <main class="contenedor-principal contenedor-proyecto-detalle">
+
+    <!-- CONTEXTO -->
+    <section class="seccion" id="contexto">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Contexto del proyecto</h2>
+        <p class="subtitulo-seccion">
+          Un análisis sencillo pero potente para explorar cómo ha variado la vegetación estival en los últimos años.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+        <p>
+          El objetivo de este proyecto es analizar la evolución del NDVI durante los meses de verano en la Comunidad de Madrid,
+          utilizando imágenes Sentinel-2 procesadas en Google Earth Engine. A partir de una serie de años recientes se genera
+          un conjunto de mapas comparables que permiten identificar patrones espaciales y posibles cambios en la vegetación.
+        </p>
+
+        <ul class="lista-detalle">
+          <li>Área de estudio: Comunidad de Madrid.</li>
+          <li>Datos: imágenes Sentinel-2 (banda roja y NIR) desde varios años recientes.</li>
+          <li>Herramientas: Google Earth Engine (Code Editor y Apps).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VISOR WEB GIS -->
+    <section class="seccion seccion-visor" id="visor">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Visor NDVI en Google Earth Engine</h2>
+        <p class="subtitulo-seccion">
+          Aplicación interactiva para explorar el NDVI estival por año.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+        <!-- Sustituye la URL por la de tu App de GEE -->
+        <iframe 
+          src="https://earthengine.app/view/tu-app-ndvi" 
+          height="600"
+          loading="lazy">
+        </iframe>
+
+        <p class="nota-visor">
+          El visor permite cambiar de año y explorar visualmente la distribución del NDVI en verano, facilitando la comparación
+          espacial entre diferentes periodos.
+        </p>
+      </div>
+    </section>
+
+    <!-- METODOLOGÍA BREVE -->
+    <section class="seccion" id="metodologia">
+      <div class="cabecera-seccion">
+        <h2 class="titulo-seccion">Metodología en pocas líneas</h2>
+        <p class="subtitulo-seccion">
+          Cómo se ha construido el análisis dentro de Earth Engine.
+        </p>
+      </div>
+
+      <div class="contenido-seccion">
+        <ul class="lista-detalle">
+          <li>Selección de imágenes Sentinel-2 con baja cobertura de nubes sobre la Comunidad de Madrid.</li>
+          <li>Cálculo del NDVI a partir de las bandas NIR (B8) y roja (B4).</li>
+          <li>Generación de composiciones de verano por año (mediana del periodo junio–agosto).</li>
+          <li>Publicación del resultado en una App de Google Earth Engine e integración en el portfolio mediante un iframe.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOTÓN VOLVER -->
+    <div class="bloque-volver-proyectos">
+      <a href="../../index.html#proyectos" class="boton boton-secundario boton-volver-proyecto">
+        ← Volver a la sección de proyectos
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>
