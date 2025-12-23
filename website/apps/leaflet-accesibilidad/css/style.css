@@ -1,0 +1,575 @@
+/* =========================================================
+   Leaflet Accesibilidad · Pozuelo
+   style.css (tema oscuro)
+   ========================================================= */
+
+/* ---------- Base ---------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: rgba(255,255,255,0.92);
+  background: #0b0d14;
+}
+
+* { box-sizing: border-box; }
+
+/* ---------- Layout principal ---------- */
+#app,
+#aplicacion,
+.aplicacion {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+}
+
+/* Soporta #map y #mapa */
+#map,
+#mapa {
+  height: 100%;
+  width: 100%;
+  background: #07080d;
+}
+
+/* ---------- Panel lateral (oscuro) ---------- */
+#sidebar,
+#panelLateral,
+.panel-lateral {
+  overflow: auto;
+  padding: 18px 16px;
+  background: #0f121b;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Scrollbar */
+#sidebar::-webkit-scrollbar,
+#panelLateral::-webkit-scrollbar,
+.panel-lateral::-webkit-scrollbar {
+  width: 10px;
+}
+#sidebar::-webkit-scrollbar-thumb,
+#panelLateral::-webkit-scrollbar-thumb,
+.panel-lateral::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.14);
+  border-radius: 999px;
+  border: 2px solid #0f121b;
+}
+#sidebar::-webkit-scrollbar-track,
+#panelLateral::-webkit-scrollbar-track,
+.panel-lateral::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Cabecera */
+.panel-lateral__cabecera { margin-bottom: 16px; }
+.panel-lateral__titulo {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: rgba(255,255,255,0.92);
+}
+.panel-lateral__subtitulo {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.4;
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjeta {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 14px 14px 16px;
+  margin: 0 0 14px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.35),
+    0 14px 30px rgba(0,0,0,0.30);
+  backdrop-filter: blur(6px);
+}
+
+.tarjeta__titulo {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.88);
+}
+
+/* ---------- Campos ---------- */
+.campo__label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.62);
+  margin-bottom: 6px;
+}
+
+.campo__input,
+select {
+  width: 100%;
+  padding: 10px 11px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.92);
+  outline: none;
+  transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  font-size: 13px;
+}
+
+.campo__input::placeholder { color: rgba(255,255,255,0.35); }
+
+.campo__input:focus,
+select:focus {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.06);
+}
+
+/* ---------- Lista CUSEC ---------- */
+.lista-cusec {
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 8px;
+  max-height: 220px;
+  min-height: 140px;
+  overflow: auto;
+  background: rgba(0,0,0,0.22);
+}
+
+.lista-cusec::-webkit-scrollbar { width: 10px; }
+.lista-cusec::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.14);
+  border-radius: 999px;
+  border: 2px solid rgba(0,0,0,0.22);
+}
+
+/* Items */
+.cusec-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.cusec-item:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.08);
+}
+.cusec-item input { cursor: pointer; transform: translateY(1px); }
+
+/* ---------- Toggle ---------- */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.70);
+}
+.toggle input { transform: translateY(1px); }
+
+/* ---------- Botones ---------- */
+.fila-botones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.boton,
+button {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.88);
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.05s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.boton:hover,
+button:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.boton:active,
+button:active { transform: translateY(1px); }
+
+.boton:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.08);
+}
+
+/* Botón secundario (reset) */
+.boton--secundario {
+  width: 100%;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.08);
+}
+.boton--secundario:hover { background: rgba(255,255,255,0.12); }
+
+/* ---------- Indicadores ---------- */
+.indicador {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.10);
+}
+.indicador:last-child { border-bottom: none; }
+
+.indicador__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.62);
+}
+
+.indicador__valor {
+  font-size: 15px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Destacar el indicador ≤15 min si existe alguno de estos IDs */
+#kpiPop15,
+#indicadorPob15 {
+  color: rgba(140, 255, 175, 0.95);
+}
+
+/* ---------- Gráfico ---------- */
+.tarjeta--grafico .contenedor-grafico {
+  margin-top: 8px;
+  height: 280px;
+  position: relative;
+}
+
+.tarjeta--grafico canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ---------- Leaflet: controles ---------- */
+/* Control de capas */
+.leaflet-control-layers {
+  border-radius: 14px !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35) !important;
+  border: 1px solid rgba(201, 201, 201, 0.4) !important;
+  overflow: hidden;
+  background: rgba(15,18,27,0.92) !important;
+  color: rgba(255,255,255,0.92) !important;
+}
+
+.leaflet-control-layers-expanded {
+  padding: 10px 12px !important;
+}
+
+.leaflet-control-layers label {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* Popup */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: rgba(15,18,27,0.95) !important;
+  color: rgba(255,255,255,0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.leaflet-popup-content { margin: 12px 14px; }
+.leaflet-container a { color: rgba(140, 255, 175, 0.95); }
+
+/* Leyenda (desktop) */
+.legend {
+  background: rgba(15,18,27,0.92);
+  padding: 12px 14px;
+  border: 1px solid rgba(201, 201, 201, 0.4);
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1.35;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  color: rgba(255,255,255,0.90);
+  backdrop-filter: blur(6px);
+}
+
+.legend h4 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+}
+
+.legend-section { margin-top: 10px; }
+.legend-title {
+  font-weight: 900;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.88);
+}
+.legend-subtitle { font-weight: 700; opacity: .72; }
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.legend .swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+/* ===== FIX: Botones de zoom Leaflet (tema oscuro) ===== */
+.leaflet-control-zoom {
+  border: 1px solid rgba(201, 201, 201, 0.4) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35) !important;
+}
+
+.leaflet-control-zoom a {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  background: rgba(15,18,27,0.92) !important;
+  color: rgba(255,255,255,0.92) !important;
+  border: none !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+}
+
+.leaflet-control-zoom a:hover { background: rgba(255,255,255,0.10) !important; }
+.leaflet-control-zoom a:active { background: rgba(255,255,255,0.14) !important; }
+
+/* Separador entre + y – */
+.leaflet-control-zoom a + a {
+  border-top: 1px solid rgba(201, 201, 201, 0.4) !important;
+}
+
+/* ---------- Responsive (móvil) ---------- */
+@media (max-width: 768px){
+
+  html, body { height: 100% !important; }
+
+  /* Layout: columnas -> filas, y altura real del viewport */
+  #app,
+  #aplicacion,
+  .aplicacion{
+    height: 100vh !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: minmax(0, auto) minmax(0, 1fr) !important;
+  }
+
+  /* Panel arriba con scroll propio */
+  #panelLateral{
+    max-height: 48vh !important;
+    overflow-y: auto !important;
+
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+
+    /* evita “transparencia” con el mapa debajo */
+    background: rgba(15,18,27,0.98) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 1000 !important;
+  }
+
+  /* Mapa abajo visible siempre */
+  #mapa{
+    height: 52vh !important;
+    min-height: 280px !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Ajustes finos del panel */
+  .lista-cusec{ max-height: 180px; }
+  .tarjeta--grafico .contenedor-grafico{ height: 220px; }
+
+  /* Controles Leaflet más compactos */
+  .leaflet-top .leaflet-control,
+  .leaflet-bottom .leaflet-control{
+    transform: scale(0.90);
+    transform-origin: left bottom;
+  }
+
+  .leaflet-control-layers{
+    max-width: 70vw;
+    font-size: 12px;
+  }
+
+  .leaflet-control-layers-expanded{
+    max-height: 22vh;
+    overflow: auto;
+    padding: 10px 10px !important;
+  }
+
+  /* Leyenda colapsable */
+  .legend{
+    max-width: 70vw;
+    font-size: 12px;
+    padding: 0;                 /* lo hacen header/body */
+    overflow: hidden;
+  }
+
+  .legend-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 12px;
+  }
+
+  .legend-body{
+    padding: 0 12px 12px 12px;
+  }
+
+  /* Si por cualquier razón el JS no mete style="display:none", esto asegura colapso por clase */
+  .legend:not(.is-open) .legend-body{ display: none; }
+  .legend.is-open .legend-body{ display: block; }
+
+  /* Ajuste swatches */
+  .legend .swatch{
+    width: 12px;
+    height: 12px;
+  }
+/* ----- Ajustes estéticos ahora que de funcionalidad va bien ----- */
+  /* 1) Un poco de aire entre panel y mapa */
+  #app,
+  #aplicacion,
+  .aplicacion{
+    gap: 12px;
+    padding: 12px; 
+    background: #0b0d14;
+  }
+
+  /* 2) Panel con borde inferior más “card” */
+  #panelLateral{
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  }
+
+  /* 3) Mapa como tarjeta (se integra con el panel) */
+  #mapa{
+    border-radius: 18px;
+    overflow: hidden; /* recorta tiles/controles a la tarjeta */
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  }
+
+  /* 4) Los controles Leaflet un pelín separados del borde */
+  .leaflet-top.leaflet-left{ margin-top: 8px; margin-left: 8px; }
+  .leaflet-top.leaflet-right{ margin-top: 8px; margin-right: 8px; }
+  .leaflet-bottom.leaflet-left{ margin-bottom: 8px; margin-left: 8px; }
+  .leaflet-bottom.leaflet-right{ margin-bottom: 8px; margin-right: 8px; }
+
+  /* 5) (Opcional) Quita el "borde" del attribution si molesta visualmente */
+  .leaflet-control-attribution{
+    border-radius: 12px;
+    background: rgba(15,18,27,0.70) !important;
+    border: 1px solid rgba(255,255,255,0.10);
+    padding: 4px 8px;
+  }
+   /* Línea / glow suave entre panel y mapa */
+  #panelLateral{
+    position: relative;
+  }
+  #panelLateral::after{
+    content:"";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -12px;
+    height: 12px;
+    background: radial-gradient(closest-side, rgba(255,255,255,0.10), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+}
+
+/* ---------- Tablet (iPad) ---------- */
+@media (min-width: 769px) and (max-width: 1024px){
+
+  /* Mantener 2 columnas, pero panel más estrecho */
+  #app,
+  #aplicacion,
+  .aplicacion{
+    grid-template-columns: 320px 1fr;
+  }
+
+  /* Panel más compacto */
+  #panelLateral{
+    padding: 14px 12px;
+  }
+
+  .tarjeta{
+    padding: 12px 12px 14px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+  }
+
+  .lista-cusec{
+    max-height: 200px;
+  }
+
+  .tarjeta--grafico .contenedor-grafico{
+    height: 240px;
+  }
+
+  /* Controles Leaflet un pelín más pequeños */
+  .leaflet-top .leaflet-control,
+  .leaflet-bottom .leaflet-control{
+    transform: scale(0.95);
+    transform-origin: left top;
+  }
+
+  .leaflet-control-layers{
+    max-width: 44vw;
+  }
+
+  .legend{
+    max-width: 44vw;
+  }
+
+  /* contenedor con scroll vertical */
+  #grafico_barrasapiladas .chart-wrap{
+    height: 62vh;         
+    max-height: 620px;     
+    overflow-y: auto;
+  }*/
+
+  /* el canvas debe “llenar” el contenedor */
+  #grafico_barrasapiladas canvas{
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1180px){
+  #aplicacion, .aplicacion, #app{
+    grid-template-columns: 340px 1fr;
+  }
+}
+
+
