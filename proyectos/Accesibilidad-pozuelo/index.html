@@ -8,6 +8,16 @@
   <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
   <link rel="stylesheet" href="../../assets/css/style.css" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFXRE278Q4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WFXRE278Q4');
+  </script>
+  
   <!-- Estilos específicos -->
   <style>
     .encabezado-proyecto { padding-bottom: 32px; }
@@ -84,13 +94,11 @@
 
     .bloque-volver-proyectos { margin-top: 32px; text-align: left; }
 
-    /* --- Visor más ancho que el contenido textual --- */
-    /* 1) Permite que el visor pueda “salirse” del contenedor estrecho si hiciera falta */
+    /* --- Anchura visor --- */
     .contenedor-principal{
       overflow: visible;
     }
 
-    /* 2) Centra la sección del visor y le da un ancho máximo real (1600px) */
     .seccion-visor{
       position: relative;
       left: 50%;
